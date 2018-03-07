@@ -15,6 +15,14 @@
             margin: 10px;
             padding: 0;
         }
+
+        .card-body{
+            padding: 0.75rem;
+        }
+
+        .table{
+            margin-bottom: 0rem;
+        }
     </style>
 </head>
 <body>
@@ -26,17 +34,9 @@
 
                 </div>
                 <div class="col-sm text-center">
-                    <a class="blog-header-logo text-dark" href="#">코딩 도서관</a>
+                    <a href="#"><img src="/images/titleImg.PNG" width="auto" height="80px"></a>
                 </div>
                 <div class="col-sm d-flex justify-content-end align-items-center">
-                    <a class="text-muted" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="mx-3">
-                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
-                            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
-                        </svg>
-                    </a>
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
                             data-target="#createModal">로그인
                     </button>
@@ -51,19 +51,16 @@
 
 <header2 class="card flex-md-row mb-4 box-shadow h-md-250">
     <div class="container">
-        <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#">C/C++/C#</a>
-            <a class="p-2 text-muted" href="#">JAVA/Web</a>
-            <a class="p-2 text-muted" href="#">Spring framework</a>
-            <a class="p-2 text-muted" href="#">Bootstrap</a>
-            <a class="p-2 text-muted" href="#">etc.</a>
-            <!--<a class="p-2 text-muted" href="#">Business</a>-->
-            <!--<a class="p-2 text-muted" href="#">Politics</a>-->
-            <!--<a class="p-2 text-muted" href="#">Opinion</a>-->
-            <!--<a class="p-2 text-muted" href="#">Science</a>-->
-            <!--<a class="p-2 text-muted" href="#">Health</a>-->
-            <!--<a class="p-2 text-muted" href="#">Style</a>-->
-            <!--<a class="p-2 text-muted" href="#">Travel</a>-->
+        <nav class="nav navbar-light justify-content-between">
+            <a class="navbar-brand" href="#">C/C++/C#</a>
+            <a class="navbar-brand" href="#">JAVA/Web</a>
+            <a class="navbar-brand" href="#">Spring framework</a>
+            <a class="navbar-brand" href="#">Bootstrap</a>
+            <a class="navbar-brand" href="#">etc.</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </nav>
     </div>
 </header2>
@@ -102,14 +99,18 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">C/C++/C#</strong>
-                    {{#each posts}}
-                        <ul>
-                            <!--<li align="center">{{id}}</li>-->
-                            <li align="center">{{title}}</li>
-                            <!--<li align="center">{{author}}</li>-->
-                            <!--<li align="center">{{modifiedDate}}</li>-->
-                        </ul>
-                    {{/each}}
+                    <table class="table table-sm">
+                        <tbody>
+                        {{#each posts}}
+                            <tr>
+                                <td align="center">{{id}}</td>
+                                <td align="center">{{title}}</td>
+                                <!--<td align="center">{{author}}</td>-->
+                                <!--<td align="center">{{modifiedDate}}</td>-->
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
                 </div>
                 <img class="card-img-right flex-auto d-none d-md-block" src="/images/image_c.jpg" width=150px, height=150px
                      alt="Card image cap">
@@ -118,15 +119,19 @@
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">JAVA/Web</strong>
-                    {{#each posts}}
-                        <ul>
-                            <!--<li align="center">{{id}}</li>-->
-                            <li align="center">{{title}}</li>
-                            <!--<li align="center">{{author}}</li>-->
-                            <!--<li align="center">{{modifiedDate}}</li>-->
-                        </ul>
-                    {{/each}}
+                    <strong class="d-inline-block mb-2 text-danger">JAVA/Web</strong>
+                    <table class="table table-sm">
+                        <tbody>
+                        {{#each posts}}
+                            <tr>
+                                <td align="center">{{id}}</td>
+                                <td align="center">{{title}}</td>
+                                <!--<td align="center">{{author}}</td>-->
+                                <!--<td align="center">{{modifiedDate}}</td>-->
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
                 </div>
                 <img class="card-img-right flex-auto d-none d-md-block" src="/images/image_java.png" width=150px, height=150px
                      alt="Card image cap">
@@ -137,15 +142,19 @@
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">Spring framework</strong>
-                    {{#each posts}}
-                        <ul>
-                            <!--<li align="center">{{id}}</li>-->
-                            <li align="center">{{title}}</li>
-                            <!--<li align="center">{{author}}</li>-->
-                            <!--<li align="center">{{modifiedDate}}</li>-->
-                        </ul>
-                    {{/each}}
+                    <strong class="d-inline-block mb-2 text-success">Spring framework</strong>
+                    <table class="table table-sm">
+                        <tbody>
+                        {{#each posts}}
+                            <tr>
+                                <td align="center">{{id}}</td>
+                                <td align="center">{{title}}</td>
+                                <!--<td align="center">{{author}}</td>-->
+                                <!--<td align="center">{{modifiedDate}}</td>-->
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
                 </div>
                 <img class="card-img-right flex-auto d-none d-md-block" src="/images/image_spring.png" width=150px, height=150px
                      alt="Card image cap">
@@ -154,15 +163,19 @@
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Bootstrap</strong>
-                    {{#each posts}}
-                        <ul>
-                            <!--<li align="center">{{id}}</li>-->
-                            <li align="center">{{title}}</li>
-                            <!--<li align="center">{{author}}</li>-->
-                            <!--<li align="center">{{modifiedDate}}</li>-->
-                        </ul>
-                    {{/each}}
+                    <strong class="d-inline-block mb-2 text-info">Bootstrap</strong>
+                    <table class="table table-sm">
+                        <tbody>
+                        {{#each posts}}
+                            <tr>
+                                <td align="center">{{id}}</td>
+                                <td align="center">{{title}}</td>
+                                <!--<td align="center">{{author}}</td>-->
+                                <!--<td align="center">{{modifiedDate}}</td>-->
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
                 </div>
                 <img class="card-img-right flex-auto d-none d-md-block" src="/images/image_bootstrap.png" width=150px, height=150px
                      alt="Card image cap">
@@ -177,103 +190,6 @@
         </div>
     </div>
 </footer>
-<!--<div class="container-fluid">-->
-<!--<div class="row">-->
-<!--<div class="col-md-2 text-center">-->
-<!--<form class="form-signin">-->
-<!--<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>-->
-<!--<label for="inputEmail" class="sr-only">Email address</label>-->
-<!--<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
-<!--<label for="inputPassword" class="sr-only">Password</label>-->
-<!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-<!--<div class="checkbox mb-3">-->
-<!--<label>-->
-<!--<input type="checkbox" value="remember-me"> Remember me-->
-<!--</label>-->
-<!--</div>-->
-<!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
-<!--<button type="button" class="btn btn-lg btn-default btn-block" data-toggle="modal"-->
-<!--data-target="#createModal">회원가입-->
-<!--</button>-->
-<!--</form>-->
-<!--<br>-->
-<!--<nav class="navbar navbar-inverse">-->
-<!--<ul class="list-group">-->
-<!--<a href="#" class="list-group-item active">-->
-<!--Cras justo odio-->
-<!--</a>-->
-<!--<a href="#" class="list-group-item">Dapibus ac facilisis in</a>-->
-<!--<a href="#" class="list-group-item">Morbi leo risus</a>-->
-<!--<a href="#" class="list-group-item">Porta ac consectetur ac</a>-->
-<!--<a href="#" class="list-group-item">Vestibulum at eros</a>-->
-<!--</ul>-->
-<!--</nav>-->
-<!--</div>-->
-<!--<div class="col-md-8">-->
-<!--&lt;!&ndash; 목록 출력 영역 &ndash;&gt;-->
-<!--<table class="table table-horizontal table-bordered table-condensed">-->
-<!--<thead class="thead-strong">-->
-<!--<tr>-->
-<!--<th>-->
-<!--<div class="text-center">게시글번호</div>-->
-<!--</th>-->
-<!--<th>-->
-<!--<div class="text-center">제목</div>-->
-<!--</th>-->
-<!--<th>-->
-<!--<div class="text-center">작성자</div>-->
-<!--</th>-->
-<!--<th>-->
-<!--<div class="text-center">최종수정일</div>-->
-<!--</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody id="tbody">-->
-        <!--{{#each posts}}-->
-<!--<tr>-->
-<!--<td align="center">{{id}}</td>-->
-<!--<td align="center">{{title}}</td>-->
-<!--<td align="center">{{author}}</td>-->
-<!--<td align="center">{{modifiedDate}}</td>-->
-<!--</tr>-->
-        <!--{{/each}}-->
-<!--</tbody>-->
-<!--</table>-->
-<!--<span style="float:right">-->
-<!--<nav aria-label="Page navigation example">-->
-<!--<ul class="pagination">-->
-<!--<li class="page-item">-->
-<!--<a class="page-link" href="#" aria-label="Previous">-->
-<!--<span aria-hidden="true">&laquo;</span>-->
-<!--<span class="sr-only">Previous</span>-->
-<!--</a>-->
-<!--</li>-->
-<!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--<li class="page-item">-->
-<!--<a class="page-link" href="#" aria-label="Next">-->
-<!--<span aria-hidden="true">&raquo;</span>-->
-<!--<span class="sr-only">Next</span>-->
-<!--</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</nav>-->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal"-->
-<!--data-target="#savePostsModal">글 등록</button>-->
-<!--</span>-->
-<!--<br>-->
-
-
-<!--</div>-->
-<!--<div class="col-md-2">-->
-<!--<nav class="navbar navbar-default">-->
-
-<!--</nav>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
 
 <!-- Modal 영역 -->
 <div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel"
