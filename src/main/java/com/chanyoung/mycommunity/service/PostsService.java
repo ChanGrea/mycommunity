@@ -1,6 +1,6 @@
 package com.chanyoung.mycommunity.service;
 
-import com.chanyoung.mycommunity.domain.posts.PostsRepository;
+import com.chanyoung.mycommunity.domain.posts.*;
 import com.chanyoung.mycommunity.dto.posts.PostsMainResponseDto;
 import com.chanyoung.mycommunity.dto.posts.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
